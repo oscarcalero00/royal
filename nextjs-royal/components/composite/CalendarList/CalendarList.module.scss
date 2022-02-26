@@ -1,17 +1,38 @@
-.container{
-    display: flex;
+@import "../../../styles/breakpoints";
+@import "../../../styles/colors";
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  margin-top: 0px;
+  display: flex;
+  flex-flow: column wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  box-sizing: border-box;
+  // flex: 1 1 1e-9px;
+  -webkit-box-flex: 1;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-box-align: center;
+
+  @media (min-width: $mobile_max) {
     flex-flow: row wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    box-sizing: border-box;
-    flex: 1 1 1e-9px;
-    -webkit-box-flex: 1;
-    justify-content: center;
-    align-items: center;
-    -webkit-box-pack: start;
-    -webkit-box-align: center;
+    margin-top: 50px;
+    position: relative;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+  }
+
+  .toolbar {
+    margin-left: 10px;
+    margin-right: 10px;
+    align-self: stretch;
+    margin-bottom: 30px;
+  }
+ 
 }

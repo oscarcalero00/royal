@@ -1,0 +1,9 @@
+$border_01: rgb(232, 233, 235);
+$font_01:rgb(69, 120, 220);
+$font_02:rgb(121, 121, 121);
+
+:export {
+    border_01: $border_01;
+    font_01:$font_01;
+    font_02:$font_02;
+}

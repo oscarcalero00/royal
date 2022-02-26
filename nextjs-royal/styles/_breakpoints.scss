@@ -1,0 +1,10 @@
+$mobile_max: 750px;
+$desktop_min: 1220px;
+$desktop_max: 1440px;
+
+
+:export {
+    mobile_max: $mobile_max;
+    desktop_min: $desktop_min;
+    desktop_max: $desktop_max;
+}

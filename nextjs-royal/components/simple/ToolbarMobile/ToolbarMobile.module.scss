@@ -1,0 +1,22 @@
+@import "../../../styles/breakpoints";
+@import "../../../styles/colors";
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid $border_01;
+    width: 100%;
+    h3{
+        color: rgb(121, 121, 121);
+        font-weight: 400;
+    }
+    a{
+        color: $font_01;
+    }
+    @media (min-width: $mobile_max) {
+        display: none;
+    }
+}

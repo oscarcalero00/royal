@@ -1,15 +1,22 @@
-.container{
-    font-size: 1.2em;
-    padding: 10px;
-    color: rgb(69, 120, 220);
-    display: flex;
-    cursor: pointer;
+@import "../../../styles/breakpoints";
+@import "../../../styles/colors";
+.container {
+  font-size: 1.2em;
+  padding: 10px;
+  color: $font_01;
+  display: flex;
+  cursor: pointer;
+  
+  height: auto;
+  padding-left: 30px;
+  @media (min-width: $mobile_max) {
     border-radius: 5px;
-    height: auto;
-    &.iteminactive{
-        background-color: white;
-    }
-    &.itemactive{
-        background-color: rgb(232, 233, 235);
-    }
+  }
+
+  &.iteminactive {
+    background-color: white;
+  }
+  &.itemactive {
+    background-color: $border_01;
+  }
 }

@@ -1,8 +1,13 @@
+@import "../../../styles/breakpoints";
+@import "../../../styles/colors";
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 25%;
+  width: 90%;
   margin: 0;
+  @media (min-width: $mobile_max) {
+    width: 25%;
+  }
 
   .year {
     flex: 1 0 100%;
@@ -13,5 +18,18 @@
     letter-spacing: 3px;
     font-weight: 200;
   }
-  
+
+  .year:before,
+  .year:after {
+    @media (max-width: $mobile_max) {
+        background-color: $border_01;
+        content: "";
+        display: inline-block;
+        height: 2px;
+        position: relative;
+        vertical-align: middle;
+        width: 35%;
+        margin: 10px;
+    }
+  }
 }

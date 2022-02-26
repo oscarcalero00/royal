@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { container } from "./SearchMenu.module.scss";
+import { container ,titleMobile } from "./SearchMenu.module.scss";
 
 import Tab from "../../simple/Tab";
 import Button from "../../simple/Button";
@@ -9,6 +9,7 @@ const SearchMenu = ({filtersTo,filtersFrom,filtersDate,tabs,onSelect}) => {
    
   return (
     <div className={container}>
+      <span className={titleMobile}>FIND A CRUISE</span>
       <Tab
         title={"CRUISIGN TO"}
         defaultText={"Cruising to Any Destination"}

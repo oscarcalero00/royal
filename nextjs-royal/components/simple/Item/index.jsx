@@ -11,9 +11,9 @@ const Item = ({ valueItem, textItem, activeItem, onClick }) => {
   const getContainerClass = (active) =>
     !active ? `${container} ${iteminactive}` : `${container} ${itemactive}`;
   return (
-    <div className={getContainerClass(activeItem)} onClick={(e) => onClick(valueItem)}>
+    <span className={getContainerClass(activeItem)} onClick={(e) => onClick(valueItem)}>
       {textItem}
-    </div>
+    </span>
   );
 };
 

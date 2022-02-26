@@ -22,7 +22,7 @@ const conftype = {
   },
 };
 
-const Tab = ({ title, defaultText, type, activeTab, filters }) => {
+const Tab = ({ title, defaultText, type, activeTab, filters, onClick }) => {
   const getContainerClass = (active) =>
     !active ? `${container} ${tabinactive}` : `${container} ${tabactive}`;
   const getIcon = (type, active) =>
@@ -33,7 +33,7 @@ const Tab = ({ title, defaultText, type, activeTab, filters }) => {
   const labelSubTitle = mainFilter ? mainFilter : defaultText;
 
   return (
-    <div className={getContainerClass(activeTab)}>
+    <div className={getContainerClass(activeTab)} onClick={(e) => onClick()}>
       <div>
         <h3>{title}</h3>
         <p>{labelSubTitle}</p>

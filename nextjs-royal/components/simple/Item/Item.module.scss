@@ -1,0 +1,17 @@
+.container{
+   
+    font-size: 1.3em;
+    //margin:20px;
+    padding: 20px;
+    color: rgb(69, 120, 220);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    &.iteminactive{
+        background-color: white;
+    }
+    &.itemactive{
+        background-color: rgb(232, 233, 235);
+    }
+}

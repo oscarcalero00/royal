@@ -1,22 +1,63 @@
-.container{
-   
-    font-size: 1.2em;
-    
-    color: rgb(69, 120, 220);
-    
-    justify-content: center;
-    cursor: pointer;
-    text-align-last: center;
-    
+@import "../../../styles/breakpoints";
+@import "../../../styles/colors";
+.container {
+  font-size: 1.2em;
+  color: $font_01;
+  display: inline-flex;
+  flex-direction: column;
 
-    flex: 1 0 19%;
-    margin: 5px;
-    height: 50px;
+  justify-content: center;
+  cursor: pointer;
+  text-align-last: center;
 
-    &.iteminactive{
-        background-color: white;
+  flex: 1 0 22%;
+  margin: 0px;
+  height: 50px;
+
+  &--itemactivefirst {
+    background: linear-gradient(90deg, white 30%, $border_01 70%);
+    z-index: 1;
+    &:before {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background: $font_01;
+      content: "";
+      position: absolute;
+      z-index: 2;
+      margin-left: 19px;
+      @media (min-width: $mobile_max) {
+        margin-left: 15px;
+      }
     }
-    &.itemactive{
-        background-color: rgb(232, 233, 235);
+    a {
+      z-index: 3;
+      color: white;
     }
+  }
+
+  &--itemactivemiddle {
+    background-color: rgb(232, 233, 235);
+  }
+
+  &--itemactivelast {
+    background: linear-gradient(90deg, $border_01 60%, white 40%);
+    &:before {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background: $font_01;
+      content: "";
+      position: absolute;
+      z-index: 2;
+      margin-left: 19px;
+      @media (min-width: $mobile_max) {
+        margin-left: 15px;
+      }
+    }
+    a {
+      z-index: 3;
+      color: white;
+    }
+  }
 }

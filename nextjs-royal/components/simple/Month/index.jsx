@@ -1,24 +1,32 @@
 import PropTypes from "prop-types";
 import React from "react";
-import {
-  container,
-  Monthactive,
-  Monthinactive,
-} from "./Month.module.scss";
+import * as styles from "./Month.module.scss";
 
-const Month = ({ idMonth, nameMonth, activeMonth, bridgetMonth, onClick }) => {
-    
-  const getContainerClass = (active) =>
-    !active ? `${container} ${Monthinactive}` : `${container} ${Monthactive}`;
+const typeclass = {
+  first: styles["container--itemactivefirst"],
+  last: styles["container--itemactivelast"],
+  middle: styles["container--itemactivemiddle"],
+};
+
+const Month = ({ idMonth, nameMonth, onClick, type }) => {
+  const getContainerClass = (type) =>
+    `${styles["container"]} ${typeclass[type]}`;
   return (
-    <div className={getContainerClass(activeMonth)} onClick={(e) => onClick(idMonth)}>
-      {nameMonth}
+    <div className={getContainerClass(type)} onClick={(e) => onClick(idMonth)}>
+      <a>{nameMonth}</a>
     </div>
   );
 };
 
-Month.propTypes = {};
+Month.propTypes = {
+  idMonth: PropTypes.number.isRequired,
+  nameMonth: PropTypes.string.isRequired,
+  onClick:PropTypes.func.isRequired,
+  type: PropTypes.string,
+};
 
-Month.defaultProps = {};
+Month.defaultProps = {
+  type: undefined,
+};
 
 export default Month;

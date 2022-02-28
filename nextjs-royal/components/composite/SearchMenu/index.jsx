@@ -1,22 +1,34 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { container ,titleMobile } from "./SearchMenu.module.scss";
+import { container, titleMobile } from "./SearchMenu.module.scss";
+import * as styles from "./SearchMenu.module.scss";
 
 import Tab from "../../simple/Tab";
 import Button from "../../simple/Button";
 
-const SearchMenu = ({filtersTo,filtersFrom,filtersDate,tabs,onSelect}) => {
-   
+const SearchMenu = ({
+  filtersTo,
+  filtersFrom,
+  filtersDate,
+  tabs,
+  onSelect,
+}) => {
   return (
-    <div className={container}>
-      <span className={titleMobile}>FIND A CRUISE</span>
+    <nav
+      className={styles['container']}
+      itemType="http://schema.org/SiteNavigationElement"
+      role="navigation"
+    >
+      <span className={styles['container--titleMobile']}>FIND A CRUISE</span>
       <Tab
         title={"CRUISIGN TO"}
         defaultText={"Cruising to Any Destination"}
         type={"dropbox"}
         activeTab={tabs.to}
         filters={filtersTo}
-        onClick={()=>onSelect('to')}
+        onClick={() => onSelect("to")}
+        aria-label={'CRUISIGN TO'}
+        role='button'
       />
       <Tab
         title={"DEPARTING FROM"}
@@ -24,7 +36,9 @@ const SearchMenu = ({filtersTo,filtersFrom,filtersDate,tabs,onSelect}) => {
         type={"dropbox"}
         activeTab={tabs.from}
         filters={filtersFrom}
-        onClick={()=>onSelect('from')}
+        onClick={() => onSelect("from")}
+        aria-label={'DEPARTING FROM'}
+        role='button'
       />
       <Tab
         title={"LEAVING"}
@@ -32,15 +46,17 @@ const SearchMenu = ({filtersTo,filtersFrom,filtersDate,tabs,onSelect}) => {
         type={"calendar"}
         activeTab={tabs.date}
         filters={[]}
-        onClick={()=>onSelect('date')}
+        onClick={() => onSelect("date")}
+        aria-label={'LEAVING DATE'}
+        role='button'
       />
       <Button textButton="SEARCH CRUISE" />
-    </div>
+    </nav>
   );
 };
 
 SearchMenu.propTypes = {
-    filtersTo: PropTypes.arrayOf(PropTypes.any)
+  filtersTo: PropTypes.arrayOf(PropTypes.any),
 };
 
 SearchMenu.defaultProps = {};

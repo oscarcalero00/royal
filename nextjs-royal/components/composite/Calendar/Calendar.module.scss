@@ -9,7 +9,7 @@
     width: 25%;
   }
 
-  .year {
+  &--year {
     flex: 1 0 100%;
     margin: 5px;
     height: 70px;
@@ -17,11 +17,9 @@
     font-size: 1.5em;
     letter-spacing: 3px;
     font-weight: 200;
-  }
-
-  .year:before,
-  .year:after {
-    @media (max-width: $mobile_max) {
+    &:before,
+    &:after {
+      @media (max-width: $mobile_max) {
         background-color: $border_01;
         content: "";
         display: inline-block;
@@ -30,6 +28,7 @@
         vertical-align: middle;
         width: 35%;
         margin: 10px;
+      }
     }
   }
 }

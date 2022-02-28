@@ -20,18 +20,18 @@
     margin-bottom: 0px;
   }
 
-  &.tabactive {
+  &--tab-active {
     @media (min-width: $mobile_max) {
       border-bottom: 10px solid $border_01;
     }
   }
-  &.tabinactive {
+  &--tab-inactive {
     @media (min-width: $mobile_max) {
       border-bottom: 10px solid white;
     }
   }
 
-  .numberFilter {
+  &__numberFilter {
     width: 13%;
     position: relative;
     display: flex;

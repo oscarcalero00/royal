@@ -1,11 +1,9 @@
-import SearchCruise from '../components/pages/SearchCruise'
+import SearchCruise from "../components/pages/SearchCruise";
 
 const Royal = () => (
   <>
-   
-    <SearchCruise  />
-    
+    <SearchCruise />
   </>
-)
+);
 
-export default Royal
+export default Royal;

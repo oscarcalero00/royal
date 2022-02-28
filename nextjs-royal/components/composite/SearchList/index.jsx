@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { container, toolbar } from "./SearchList.module.scss";
+import * as styles from "./SearchList.module.scss";
 
 import Item from "../../simple/Item";
 import ToolbarMobile from "../../simple/ToolbarMobile";
@@ -9,7 +9,7 @@ const SearchList = ({ listItems, onSelect, title, onBack, onApply }) => {
   const getKey = (index) => `search_list_${index}`;
 
   return (
-    <div className={container}>
+    <div className={styles['container']}>
       <ToolbarMobile
         title={`Select ${title}`}
         onBack={() => {

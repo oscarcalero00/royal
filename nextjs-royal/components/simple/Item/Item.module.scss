@@ -6,17 +6,17 @@
   color: $font_01;
   display: flex;
   cursor: pointer;
-  
+
   height: auto;
   padding-left: 30px;
   @media (min-width: $mobile_max) {
     border-radius: 5px;
   }
 
-  &.iteminactive {
+  &--item-inactive {
     background-color: white;
   }
-  &.itemactive {
+  &--item-active {
     background-color: $border_01;
   }
 }

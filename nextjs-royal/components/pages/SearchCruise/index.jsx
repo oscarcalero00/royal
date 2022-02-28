@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useState } from "react";
 
-import { container, filterContainer } from "./SearchCruise.module.scss";
+import * as styles from "./SearchCruise.module.scss";
 
 import SearchMenu from "../../composite/SearchMenu";
 import SearchList from "../../composite/SearchList";
@@ -24,7 +24,7 @@ const SearchCruise = () => {
   const [orderFrom, setOrderFrom] = useState([]);
 
   return (
-    <div className={container}>
+    <div className={styles['container']}>
       <SearchMenu
         tabs={tabs}
         filtersTo={orderTo.map((idorder) =>
@@ -47,84 +47,83 @@ const SearchCruise = () => {
           setTabs(newTabs);
         }}
       />
-      <div className={filterContainer}>
-        {tabs.to && (
-          <SearchList
-            title={"Departure Port"}
-            listItems={filtersTo}
-            onSelect={(id) => {
-              const newList = [...filtersTo];
-              const previousValue = newList.find((item) => item.value == id);
 
-              if ([...orderTo].includes(id))
-                setOrderTo([...orderTo].filter((value) => value != id));
-              else setOrderTo([...orderTo, id]);
+      {tabs.to && (
+        <SearchList
+          title={"Departure Port"}
+          listItems={filtersTo}
+          onSelect={(id) => {
+            const newList = [...filtersTo];
+            const previousValue = newList.find((item) => item.value == id);
 
-              previousValue.active = !previousValue.active;
-              setfiltersTo(newList);
-            }}
-            onBack={() => {
-              setTabs({
-                ...tabs,
-                to: false,
-              });
-            }}
-            onApply={() => {
-              setTabs({
-                ...tabs,
-                to: false,
-              });
-            }}
-          />
-        )}
-        {tabs.from && (
-          <SearchList
-            title={"Destination"}
-            listItems={filtersFrom}
-            onSelect={(id) => {
-              const newList = [...filtersFrom];
-              const previousValue = newList.find((item) => item.value == id);
+            if ([...orderTo].includes(id))
+              setOrderTo([...orderTo].filter((value) => value != id));
+            else setOrderTo([...orderTo, id]);
 
-              if ([...orderFrom].includes(id))
-                setOrderFrom([...orderFrom].filter((value) => value != id));
-              else setOrderFrom([...orderFrom, id]);
+            previousValue.active = !previousValue.active;
+            setfiltersTo(newList);
+          }}
+          onBack={() => {
+            setTabs({
+              ...tabs,
+              to: false,
+            });
+          }}
+          onApply={() => {
+            setTabs({
+              ...tabs,
+              to: false,
+            });
+          }}
+        />
+      )}
+      {tabs.from && (
+        <SearchList
+          title={"Destination"}
+          listItems={filtersFrom}
+          onSelect={(id) => {
+            const newList = [...filtersFrom];
+            const previousValue = newList.find((item) => item.value == id);
 
-              previousValue.active = !previousValue.active;
-              setfiltersFrom(newList);
-            }}
-            onBack={() => {
-              setTabs({
-                ...tabs,
-                from: false,
-              });
-            }}
-            onApply={() => {
-              setTabs({
-                ...tabs,
-                from: false,
-              });
-            }}
-          />
-        )}
-        {tabs.date && (
-          <CalendarList
-            listYears={listDate}
-            title={"Travel Dates"}
-            onBack={() => {
-              setTabs({
-                ...tabs,
-                date: false,
-              });
-            }}
-            onApply={() => {
-              setTabs({
-                ...tabs,
-                date: false,
-              });
-            }}
-          />
-        )}
-      </div>
+            if ([...orderFrom].includes(id))
+              setOrderFrom([...orderFrom].filter((value) => value != id));
+            else setOrderFrom([...orderFrom, id]);
+
+            previousValue.active = !previousValue.active;
+            setfiltersFrom(newList);
+          }}
+          onBack={() => {
+            setTabs({
+              ...tabs,
+              from: false,
+            });
+          }}
+          onApply={() => {
+            setTabs({
+              ...tabs,
+              from: false,
+            });
+          }}
+        />
+      )}
+      {tabs.date && (
+        <CalendarList
+          listYears={listDate}
+          title={"Travel Dates"}
+          onBack={() => {
+            setTabs({
+              ...tabs,
+              date: false,
+            });
+          }}
+          onApply={() => {
+            setTabs({
+              ...tabs,
+              date: false,
+            });
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { container,  toolbar } from "./CalendarList.module.scss";
+import * as styles from "./CalendarList.module.scss";
 
 import Calendar from "../Calendar";
 import ToolbarMobile from "../../simple/ToolbarMobile";
@@ -9,8 +9,8 @@ const CalendarList = ({ listYears, title, onBack, onApply }) => {
   const getKey = (index) => `calendar_list_${index}`;
 
   return (
-    <div className={container}>
-      <div className={toolbar}>
+    <div className={styles["container"]}>
+      <div className={styles["container--toolbar"]}>
         <ToolbarMobile
           title={`Select ${title}`}
           onBack={() => {
@@ -21,7 +21,7 @@ const CalendarList = ({ listYears, title, onBack, onApply }) => {
           }}
         />
       </div>
-     
+
       {listYears &&
         listYears.map((item, index) =>
           item ? (
@@ -42,6 +42,8 @@ const CalendarList = ({ listYears, title, onBack, onApply }) => {
 CalendarList.propTypes = {
   listYears: PropTypes.arrayOf(PropTypes.any),
   title: PropTypes.string,
+  onBack: PropTypes.func.isRequired,
+  onApply: PropTypes.func.isRequired,
 };
 
 CalendarList.defaultProps = {

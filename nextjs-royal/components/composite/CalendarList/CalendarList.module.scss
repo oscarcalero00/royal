@@ -12,7 +12,6 @@
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   box-sizing: border-box;
-  // flex: 1 1 1e-9px;
   -webkit-box-flex: 1;
   justify-content: center;
   align-items: center;
@@ -28,7 +27,7 @@
     margin-right: auto;
   }
 
-  .toolbar {
+  &--toolbar {
     margin-left: 10px;
     margin-right: 10px;
     align-self: stretch;

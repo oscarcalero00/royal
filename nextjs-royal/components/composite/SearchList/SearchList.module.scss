@@ -1,8 +1,6 @@
 @import "../../../styles/breakpoints";
 @import "../../../styles/colors";
 .container {
- 
-
   display: flex;
   column-gap: 20px;
   row-gap: 20px;
@@ -34,9 +32,5 @@
     flex-flow: column wrap;
     height: 380px;
     box-shadow: 0px 17px 11px -12px rgba(0, 0, 0, 0.19);
-  }
-
-  .toolbar{
-      margin-left: 3%;
   }
 }

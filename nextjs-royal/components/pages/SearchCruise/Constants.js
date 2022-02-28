@@ -170,91 +170,102 @@ export const listFrom = [
 ];
 
 const listmonths = [
-    {
-        id : 1 ,
-        name: 'Jan',
-        active:false,
-        briget:false
-    },
-    {
-        id : 2 ,
-        name: 'Feb',
-        active:false,
-        briget:false
-    },
-    {
-        id : 3 ,
-        name: 'Mar',
-        active:false,
-        briget:false
-    },
-    {
-        id : 4 ,
-        name: 'Apr',
-        active:false,
-        briget:false
-    },
-    {
-        id : 5 ,
-        name: 'May',
-        active:false,
-        briget:false
-    },
-    {
-        id : 6 ,
-        name: 'Jun',
-        active:false,
-        briget:false
-    },
-    {
-        id : 7 ,
-        name: 'Jul',
-        active:false,
-        briget:false
-    },
-    {
-        id : 8 ,
-        name: 'Ago',
-        active:false,
-        briget:false
-    },
-    {
-        id : 9 ,
-        name: 'Sep',
-        active:false,
-        briget:false
-    },
-    {
-        id : 10 ,
-        name: 'Oct',
-        active:false,
-        briget:false
-    },
-    {
-        id : 11 ,
-        name: 'Nov',
-        active:false,
-        briget:false
-    },
-    {
-        id : 12 ,
-        name: 'Dec',
-        active:false,
-        briget:false
-    },
+  {
+    id: 1,
+    name: "Jan",
+    active: true,
+    briget: false,
+    type: "first",
+  },
+  {
+    id: 2,
+    name: "Feb",
+    active: false,
+    briget: false,
+    type: "middle",
+  },
+  {
+    id: 3,
+    name: "Mar",
+    active: true,
+    briget: false,
+    type: "middle",
+  },
+  {
+    id: 4,
+    name: "Apr",
+    active: false,
+    briget: false,
+    type: "last",
+  },
+  {
+    id: 5,
+    name: "May",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 6,
+    name: "Jun",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 7,
+    name: "Jul",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 8,
+    name: "Ago",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 9,
+    name: "Sep",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 10,
+    name: "Oct",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 11,
+    name: "Nov",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
+  {
+    id: 12,
+    name: "Dec",
+    active: false,
+    briget: false,
+    type: undefined,
+  },
 ];
 export const listDate = [
   {
     year: 2018,
-    months:listmonths
+    months: listmonths,
   },
   {
     year: 2019,
-    months:listmonths
+    months: listmonths,
   },
   {
     year: 2020,
-    months:listmonths
+    months: listmonths,
   },
-  
 ];

@@ -3,10 +3,11 @@
 .container {
   font-size: 1.2em;
   color: $font_01;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
 
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   text-align-last: center;
 
@@ -25,10 +26,6 @@
       content: "";
       position: absolute;
       z-index: 2;
-      margin-left: 19px;
-      @media (min-width: $mobile_max) {
-        margin-left: 15px;
-      }
     }
     a {
       z-index: 3;
@@ -50,10 +47,6 @@
       content: "";
       position: absolute;
       z-index: 2;
-      margin-left: 19px;
-      @media (min-width: $mobile_max) {
-        margin-left: 15px;
-      }
     }
     a {
       z-index: 3;
